@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container">
+
+    {% with messages = get_flashed_messages(with_categories = true) %}
+
+        {% if messages %}
+
+            {% for cat, msg in messages %}
+
+                {% if cat == 'user-created' %}
+
+                <div class="alert alert-success">
+                    {{ msg }}
+                <button type = "button" class = "close" data-dismiss = "alert">&times;</button>
+                </div>
+
+                {% endif %}
+
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+</div>
+
+
+<div class="container" >
+    <header class="row" id="ok">
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Welcome To YOUR Marvel Universe</h2>
+            <h5>Create an API tool for collecting Marvel characters that YOU make!</h5>
+            <div>
+                <button class="btn btn-primary">View Our Docs</button>
+                <button class="btn btn-primary">Join Our Slack</button>
+            </div>
+        </div>
+        <!--Header Image-->
+
+        <div class="col-12 col-md-6">
+            <img class="header-image" src="../../static/images/Marvel-Vision-PNG-File.png" alt="Hero Header Image">
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+    <!--End of Collection Features-->
+    <section class="row" id= "hello">
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/favpng_marvel-avengers-alliance-marvel-ultimate-alliance-2-captain-america-hulk-iron-man.png" alt="Drone Image" id="Drone-image">
+        </div>
+        <div class="col-12 col-md-6" id="whatever">
+            <h4>Talk with like-minded Marvel collectors and display your collection!</h4>
+            <p>
+                Talk with other devs around the world and collab
+                on projects with you data. Join our slack channel and give
+                a star to the project on Github!
+            </p>
+            <div>
+                <button class="btn btn-primary">View On Github</button>
+                <button class="btn btn-primary">Join Our Slack Channel!</button>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}

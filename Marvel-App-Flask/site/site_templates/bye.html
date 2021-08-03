@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main class="container" id="maincont">
+        <div class="spidey"><img src="../../static/images/toppng.com-spider-man-png-clipart-spiderman-377x601.png" alt=""></div>
+        <div id="last">
+        <h1>Thanks for Hanging out!</h1>
+        <h3>You'll be redirected in 5, 4, 3, 2, 1...</h3>
+
+        <img src="../../static/images/Screen Shot 2021-06-26 at 12.01.39 PM.png">
+
+        </div>
+    </main>
+
+    <script>
+        window.setTimeout(function(){
+
+          // Move to a new location or you can do something else
+          window.location.href = "/";
+
+          }, 5000);
+
+    </script>
+
+{% endblock content %}

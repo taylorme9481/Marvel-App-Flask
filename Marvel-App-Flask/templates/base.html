@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="../static/css/main.css">
+<link rel="shortcut icon" href="../static/images/44739_111420_marvel_mb.png">
+<title> Marvel API</title>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+ <!-- Nav here  -->
+ <nav class="ct-nav">
+    <div>
+        <a href="{{ url_for('site.home') }}"> <img src="../static/images/44739_111420_marvel_mb.png"> </a>
+    </div>
+
+
+
+
+    <!-- nav items -->
+
+    <div>
+        <ul id="horizontal-list">
+
+            {% if current_user.is_authenticated %}
+
+            <a href="{{ url_for('site.profile') }}">
+                <li><button class="btn btn-primary">Profile</button></li>
+            </a>
+
+            <a href="{{ url_for('auth.logout') }}">
+                <button class="btn btn-primary">Log Out</button>
+            </a>
+
+            {% else %}
+
+            <a href="{{ url_for('auth.signin') }}">
+                <li><button class="btn btn-primary">Sign In</button></li>
+            </a>
+            <a href="{{ url_for('auth.signup') }}">
+                <li><button class="btn btn-primary">Sign Up</button></li>
+            </a>
+
+            {% endif %}
+
+        </ul>
+    </div>
+
+
+</nav>
+{% block content %}
+{% endblock content %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>
